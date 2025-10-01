@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mes liens — Linkstyle</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#240f20;
+      --card:#240f20;
+      --muted:#b894ae;
+      --accent-1: linear-gradient(135deg,#ed3ac3 0%,#d406b2 100%);
+      --glass: rgba(255,255,255,0.04);
+      --btn-radius: 14px;
+      --max-width:420px;
+      --safe-pad:16px;
+      color-scheme: dark;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.12), transparent),
+                  radial-gradient(900px 400px at 90% 85%, rgba(6,182,212,0.06), transparent),
+                  var(--bg);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:var(--max-width);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:20px;
+      padding:24px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      border: 1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(6px);
+    }
+
+    .header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      margin-bottom:18px;
+    }
+    .avatar{
+      width:72px;
+      height:72px;
+      border-radius:16px;
+      background: linear-gradient(135deg,#111827,#0b1220);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:26px;
+      color:white;
+      flex-shrink:0;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .info{
+      flex:1;
+      min-width:0;
+    }
+    .name{
+      font-weight:700;
+      font-size:18px;
+      color:#ffffff;
+      margin:0 0 4px 0;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      overflow:hidden;
+    }
+    .handle{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .bio{
+      color:var(--muted);
+      font-size:13px;
+      margin:0 0 10px 0;
+    }
+
+    .links{display:flex;flex-direction:column;gap:12px}
+
+    .btn{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      padding:14px 16px;
+      border-radius:var(--btn-radius);
+      background:var(--glass);
+      color:#e6eef8;
+      font-weight:600;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.5);
+      transition:transform .14s ease, box-shadow .14s ease, background .14s ease;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .btn:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(2,6,23,0.7)}
+    .btn .icon{width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+    .btn .label{flex:1;text-align:left;}
+    .btn .meta{font-size:12px;color:var(--muted);}
+
+    .primary{background:var(--accent-1);border:0;color:white}
+
+    .small-row{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-top:14px}
+    .platforms{display:flex;gap:8px}
+    .icon-circle{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.03);display:inline-flex;align-items:center;justify-content:center}
+
+    /* Responsive tweaks */
+    @media (max-width:480px){
+      body{padding:18px}
+      .wrap{padding:18px;border-radius:16px}
+      .avatar{width:64px;height:64px}
+    }
+
+    /* Utility classes for editing */
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main">
+    <header class="header">
+      <div class="avatar" >
+          <img src="images/Logo noir.jpg" alt="Photo de profil">
+      </div>
+      <div class="info">
+        <h1 class="name">MIRGALET Victor</h1>
+        <p class="handle">@silentvictor.jpg</p>
+        <p class="bio">Graphiste • Photographe — Mettre une courte bio ici (2 - 3 phrases).</p>
+      </div>
+    </header>
+
+    <section class="links" aria-label="Liens principaux">
+      <!-- Exemple de bouton principal (site / boutique) -->
+      <a class="btn primary" href="#" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">🔗</span>
+        <span class="label">Visiter mon site</span>
+        <span class="meta">Site officiel</span>
+      </a>
+
+      <!-- Réseaux sociaux -->
+      <a class="btn" href="https://x.com/silent_jpg" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">🐦</span>
+        <span class="label">Twitter / X</span>
+        <span class="meta">@silent_jpg</span>
+      </a>
+
+      <a class="btn" href="https://www.instagram.com/silentvictor.jpg/" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">📸</span>
+        <span class="label">Instagram</span>
+        <span class="meta">@silentvictor.jpg</span>
+      </a>
+
+      <a class="btn" href="#" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">🎵</span>
+        <span class="label">TikTok</span>
+        <span class="meta">@silentvictor.jpg</span>
+      </a>
+
+      <a class="btn" href="https://www.linkedin.com/in/victor-mirgalet/" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">💼</span>
+        <span class="label">LinkedIn</span>
+        <span class="meta">Victor Mirgalet</span>
+      </a>
+
+      <!-- Bouton contact -->
+      <a class="btn" href="mailto:votre@email.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">✉️</span>
+        <span class="label">Me contacter</span>
+        <span class="meta">silentvictor.jpg@gmail.com</span>
+      </a>
+    </section>
+
+    <div class="small-row">
+      <div class="platforms" aria-hidden="true">
+        <div class="icon-circle">🌐</div>
+        <div class="icon-circle">🔥</div>
+        <div class="icon-circle">📺</div>
+      </div>
+      <div style="font-size:12px;color:var(--muted)">© <span id="year"></span> Votre nom</div>
+    </div>
+  </main>
+
+  <script>
+    // Remplissage automatique de l'année
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Astuce: pour personnaliser facilement, remplacez le texte et les href ci‑dessous.
+    // Exemple rapide pour éditer depuis la console:
+    // document.querySelector('.name').textContent = 'Nouveau nom';
+
+    // Si vous voulez changer l'avatar en image, remplacez le contenu de .avatar par:
+    // document.querySelector('.avatar').innerHTML = '<img src="URL_DE_VOTRE_AVATAR.jpg" alt="Votre nom" style="width:100%;height:100%;object-fit:cover;border-radius:12px">'
+  </script>
+</body>
+</html>
